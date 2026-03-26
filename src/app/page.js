@@ -56,8 +56,10 @@ export default function Home() {
     setIsLoading(true)
     const systemPrompt = buildSystemPrompt(world, currentHp, currentLevel, currentTurn)
 
+    // 최근 20개 메시지(10턴)만 유지하여 토큰 절약
+    const trimmedHistory = historyRef.current.slice(-20)
     const contents = []
-    for (const msg of historyRef.current) {
+    for (const msg of trimmedHistory) {
       contents.push({
         role: msg.role === 'assistant' ? 'model' : 'user',
         parts: [{ text: msg.content }],
