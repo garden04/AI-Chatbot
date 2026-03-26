@@ -1,4 +1,5 @@
 import { Noto_Serif_KR, Cinzel_Decorative } from 'next/font/google'
+import './globals.css'
 
 const notoSerifKR = Noto_Serif_KR({
   weight: ['400', '700'],
