@@ -2,6 +2,7 @@ export async function POST(request) {
   const { contents, systemPrompt } = await request.json();
 
   const apiKey = process.env.GEMINI_API_KEY;
+  console.log("GEMINI_API_KEY exists:", !!apiKey);
   if (!apiKey) {
     return Response.json({ error: "API key not configured" }, { status: 500 });
   }
