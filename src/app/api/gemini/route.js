@@ -7,7 +7,7 @@ export async function POST(request) {
     return Response.json({ error: "API key not configured" }, { status: 500 });
   }
 
-  const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+  const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`;
 
   const body = {
     system_instruction: { parts: [{ text: systemPrompt }] },
