@@ -12,7 +12,7 @@ export async function POST(request) {
   const body = {
     system_instruction: { parts: [{ text: systemPrompt }] },
     contents: contents,
-    generationConfig: { maxOutputTokens: 1000 },
+    generationConfig: { maxOutputTokens: 500 },
   };
 
   const res = await fetch(GEMINI_URL, {
